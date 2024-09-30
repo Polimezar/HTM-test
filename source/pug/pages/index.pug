@@ -1,7 +1,7 @@
 extends ../components/base/layout
 
 block variables
-  - const title = "ProjectName" //- на страницах кроме главной используйте О нас — ProjectName
+  - const title = "Покупка - закончились кредиты?"
   - const wrapperMods = ""
   - const hasHeader = true
   - const headerMods = ""
@@ -11,8 +11,19 @@ block variables
 
 block main
   main
-    //- на странице запрещен "голый" код
-    //- все блоки вставляются из папки pug/components/blocks
-    +intro()
+    section.credit
+      .container
+        .credit__wrap
+          +sidebar({
+            imgName: "img-profile",
+            format: "jpg",
+            nameProfile: "Test2412",
+            status: "Get premium",
+          })
 
-block modals
+          +credit-block({
+            title: "Закончились кредиты?",
+          })
+
+        +img("content", "img-pattern-left", "png", 588, 519, "bg-pattern").img-pattern-left(data-parallax)
+        +img("content", "img-pattern-right", "png", 588, 519, "bg-pattern").img-pattern-right(data-parallax)

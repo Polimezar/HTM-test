@@ -1,0 +1,49 @@
+.credit {
+  @include vp-768 {
+    padding: 30px 0;
+    overflow: hidden;
+
+    .container {
+      position: relative;
+    }
+  }
+
+  &__wrap {
+    @include vp-768 {
+      display: flex;
+      gap: 30px;
+    }
+  }
+
+  .img-pattern-left {
+    display: none;
+    position: absolute;
+    width: 386px;
+    height: 403px;
+    left: -235px;
+    top: 255px;
+    filter: blur(5px);
+    z-index: -1;
+    transition: all 0.1s ease;
+
+    @include vp-768 {
+      display: block;
+    }
+  }
+
+  .img-pattern-right {
+    display: none;
+    position: absolute;
+    width: 588px;
+    height: 519px;
+    right: -427px;
+    top: 135px;
+    filter: blur(5px);
+    z-index: -1;
+    transition: all 0.1s ease;
+
+    @include vp-768 {
+      display: block;
+    }
+  }
+}

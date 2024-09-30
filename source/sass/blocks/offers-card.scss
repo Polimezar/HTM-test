@@ -1,0 +1,129 @@
+.offers-card {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+
+  @include hover-focus {
+    .offers-card__label {
+      opacity: 1;
+    }
+
+    .offers-card__price {
+      background: $color-ce-soir;
+      border: 2px solid $color-ce-soir;
+    }
+
+    .offers-card__value {
+      color: $color-default-white;
+    }
+
+    .btn--white {
+      color: $color-default-black;
+      background-color: $color-sunglow;
+    }
+  }
+
+  &--red {
+    .offers-card__price {
+      background: $color-coral-tree-02;
+      border: 2px solid $color-coral-tree;
+    }
+  }
+
+  &__label {
+    position: absolute;
+    padding: 4px 10px;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: $color-sunglow;
+    border-radius: 5px;
+    transition: opacity $trans-default;
+
+    @include vp-768 {
+      top: 0;
+      left: 13px;
+      opacity: 0;
+    }
+  }
+
+  &__label-text {
+    font-size: 14px;
+    line-height: 16px;
+    margin: 0;
+  }
+
+  &__price {
+    background-color: $color-ce-soir;
+    border-radius: 10px;
+    width: 93%;
+    padding: 16px 20px 16px 33px;
+    transition: background-color $trans-default;
+
+    @include vp-768 {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 10px 41px;
+
+      width: 100%;
+      padding: 15px;
+
+      background-color: $color-ce-soir-01;
+      border: 2px solid $color-ce-soir;
+    }
+  }
+
+  &__price-wrap {
+    display: flex;
+    gap: 3px;
+    align-items: center;
+    justify-content: flex-end;
+
+    @include vp-768 {
+      justify-content: center;
+      gap: 5px;
+    }
+  }
+
+  &__value {
+    margin: 0;
+    text-align: end;
+    font-size: 24px;
+    line-height: 28px;
+    color: $color-default-white;
+    transition: color $trans-default;
+
+    @include vp-768 {
+      color: $color-default-black;
+    }
+  }
+
+  &__credit-icon {
+    padding: 4px 3px;
+    background: $color-sunglow;
+    font-size: 8px;
+    line-height: 9px;
+    color: $color-default-black;
+    border-radius: 50%;
+  }
+
+  &__value--slash,
+  &__value--price {
+    @include vp-768 {
+      display: none;
+    }
+  }
+
+  &__btn {
+    display: none;
+    transition: background-color $trans-default, color $trans-default;
+
+    @include vp-768 {
+      display: flex;
+      width: 100%;
+      max-width: 185px;
+    }
+  }
+}

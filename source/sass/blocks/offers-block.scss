@@ -1,0 +1,42 @@
+.offers-block {
+  width: 100%;
+
+  @include vp-768 {
+    overflow: visible;
+  }
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    @include vp-768 {
+      flex-wrap: wrap;
+      gap: 15px 30px;
+    }
+  }
+
+  &__item {
+    @include vp-768 {
+      flex: 1 0 150px;
+      max-width: 100%;
+      // height: 150px;
+    }
+  }
+
+  .swiper-pagination {
+    position: static;
+  }
+
+  .swiper-pagination-bullet {
+    width: 7px;
+    height: 7px;
+    background: $color-golden-poppy;
+    opacity: 1;
+  }
+
+  .swiper-pagination-bullet-active {
+    width: 9px;
+    height: 9px;
+  }
+}

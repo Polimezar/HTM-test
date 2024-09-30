@@ -1,0 +1,10 @@
+mixin advantages-block(data)
+  .advantages-block
+    +icon(data.nameIcon, data.widthIcon, data.heightIcon)(class= data.classIcon)
+
+    ul.advantages-block__list
+      each item in data.list
+        li.advantages-block__item(class= item.class)
+          .advantages-block__icon
+            +icon(item.nameIcon, item.widthIcon, item.heightIcon)
+          p.advantages-block__text!= item.text

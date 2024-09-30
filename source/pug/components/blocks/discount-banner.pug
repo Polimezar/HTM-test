@@ -1,0 +1,8 @@
+mixin discount-banner(data)
+
+  .discount-banner&attributes(attributes)
+    h2.discount-banner__title!= data.title
+    p.discount-banner__text!= data.text
+
+    .discount-banner__timer
+      p.discount-banner__timer-value(data-timer)!= data.timer

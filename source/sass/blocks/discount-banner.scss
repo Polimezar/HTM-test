@@ -1,0 +1,48 @@
+.discount-banner {
+  display: none;
+  width: 100%;
+
+  background: $color-mulberry;
+  border-radius: 10px;
+  padding: 13px;
+
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  gap: 30px;
+  margin: 0 0 25px;
+
+  @include vp-768 {
+    display: flex;
+  }
+
+  &__title {
+    margin: 0;
+    font-size: 40px;
+    line-height: 46px;
+    letter-spacing: 0.04em;
+    color: $color-sunglow;
+    -webkit-text-stroke: 1px $color-default-white;
+  }
+
+  &__text {
+    line-height: 18px;
+    color: $color-default-white;
+    margin: 0;
+  }
+
+  &__timer {
+    padding: 5px 20px;
+    background: $color-default-white;
+    border-radius: 5px;
+    margin-left: auto;
+  }
+
+  &__timer-value {
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 46px;
+    margin: 0;
+    display: inline;
+  }
+}

@@ -1,0 +1,93 @@
+.sidebar {
+  display: none;
+
+  min-width: 200px;
+  max-width: 270px;
+  width: 100%;
+  background: $color-ce-soir-01;
+  border-radius: 10px;
+  padding: 18px;
+  border: 2px solid $color-ce-soir-02;
+
+  @include vp-768 {
+    display: block;
+  }
+
+  &__top-wrap {
+    border-bottom: 1px solid $color-ce-soir-02;
+    padding: 0 0 20px;
+    margin: 0 0 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+
+  &__img {
+    width: 49px;
+    height: 49px;
+    background-blend-mode: normal;
+    border: 2px solid $color-default-white;
+    border-radius: 50%;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  &__title {
+    font-size: 16px;
+    line-height: 18px;
+    margin: 0;
+  }
+
+  &__status {
+    background: $color-honey-flower;
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 11px;
+    color: $color-default-white;
+    text-transform: uppercase;
+    margin: 0;
+  }
+
+  &__nav-list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    padding-left: 10px;
+  }
+
+  &__nav-btn {
+    border: none;
+    background: transparent;
+    padding: 0;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    gap: 29px;
+    font-weight: 400;
+    transition: color $trans-default;
+
+    svg {
+      transition: transform $trans-default;
+      color: $color-ce-soir;
+    }
+
+    @include hover-focus {
+      color: $color-ce-soir;
+
+      svg {
+        transform: scale(1.1);
+      }
+    }
+  }
+}

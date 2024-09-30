@@ -1,0 +1,74 @@
+mixin credit-block(data)
+  .credit-block
+    h1.credit-block__title!= data.title
+
+    +discount-banner({
+      title: "Скидка 40%",
+      text: "Предложение действует в течение:",
+      timer: "00:30:00",
+    })
+
+    .credit-block__offers
+      +offers-block()
+
+      +btn({
+        text: "Try now",
+      }).credit-block__btn
+
+    +custom-checkbox({
+      inputLabel: "By clicking Checkbox you agree and accept our <a href=# class=custom-checkbox__label-link >Privacy Policy</a>, and  <a href=# class=custom-checkbox__label-link >Terms of use</a>",
+      inputName: "assent",
+      inputValue: "assent",
+      inputChecked: true,
+    })
+
+    +advantages-block({
+      nameIcon: "icon-diamond",
+      widthIcon: "81",
+      heightIcon: "67",
+      classIcon: "icon-diamond",
+      list: [
+        {
+          text: "Отправлять сообщения",
+          nameIcon: "icon-sms",
+          widthIcon: "16",
+          heightIcon: "16",
+          class: "advantages-block__item--end"
+        },
+        {
+          text: "Просматривать скрытые фото",
+          nameIcon: "icon-eye",
+          widthIcon: "16",
+          heightIcon: "16",
+          class: "advantages-block__item--start"
+        },
+        {
+          text: "Оплачивать подарки",
+          nameIcon: "icon-gift",
+          widthIcon: "16",
+          heightIcon: "16",
+          class: "advantages-block__item--start"
+        },
+        {
+          text: "Пользоваться другими премиум функциями",
+          nameIcon: "icon-heart",
+          widthIcon: "16",
+          heightIcon: "16",
+          class: "advantages-block__item--end"
+        },
+        {
+          text: "Просматривать скрытые фото",
+          nameIcon: "icon-sms",
+          widthIcon: "16",
+          heightIcon: "16",
+          class: "advantages-block__item--end"
+        },
+        {
+          text: "Просматривать скрытые фото",
+          nameIcon: "icon-settings",
+          widthIcon: "16",
+          heightIcon: "16",
+          class: "advantages-block__item--start"
+        },
+      ],
+    })

@@ -1,0 +1,58 @@
+mixin sidebar(data)
+  .sidebar
+    .sidebar__top-wrap
+      .sidebar__img
+        +img("content", data.imgName, data.format, "49", "49", "Фото профиля")
+      .sidebar__info
+        h3.sidebar__title!= data.nameProfile
+        p.sidebar__status!= data.status
+    ul.sidebar__nav-list
+      li.sidebar__nav-item
+        +btn({
+          text: "Profile",
+          name: "icon-profile",
+          width: 20,
+          height: 20,
+        }).sidebar__nav-btn
+      li.sidebar__nav-item
+        +btn({
+          text: "My photos",
+          name: "icon-photo",
+          width: 20,
+          height: 20,
+        }).sidebar__nav-btn
+      li.sidebar__nav-item
+        +btn({
+          text: "Messages",
+          name: "icon-sms",
+          width: 20,
+          height: 20,
+        }).sidebar__nav-btn
+      li.sidebar__nav-item
+        +btn({
+          text: "Favorites",
+          name: "icon-heart",
+          width: 20,
+          height: 20,
+        }).sidebar__nav-btn
+      li.sidebar__nav-item
+        +btn({
+          text: "Guests",
+          name: "icon-eye",
+          width: 20,
+          height: 20,
+        }).sidebar__nav-btn
+      li.sidebar__nav-item
+        +btn({
+          text: "Settings",
+          name: "icon-settings",
+          width: 20,
+          height: 20,
+        }).sidebar__nav-btn
+      li.sidebar__nav-item
+        +btn({
+          text: "Log out",
+          name: "icon-sms",
+          width: 20,
+          height: 20,
+        }).sidebar__nav-btn

@@ -1,27 +1,143 @@
 .main-nav {
-  &__list {
-    display: flex;
-    margin: 0;
-    margin-right: 20px;
-    margin-left: 60px;
-    padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
 
-    list-style: none;
+  width: 100%;
+  transition: gap $trans-600;
+
+  @include vp-768 {
+    flex-direction: row-reverse;
+    gap: 40px;
   }
 
-  &__item {
-    margin-right: 20px;
+  &.is-active {
+    gap: 40px;
+
+    .main-nav__list {
+      height: 100vh;
+      opacity: 1;
+      pointer-events: visible;
+    }
+
+    .main-nav__toggle {
+      span:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+      }
+
+      span:nth-child(2) {
+        opacity: 0;
+      }
+
+      span:nth-child(3) {
+        transform: translateY(-5px) rotate(-45deg);
+      }
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__list {
+    height: 0;
+    opacity: 0;
+    gap: 41px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    display: flex;
+    flex-direction: column;
+    transition: height $trans-600, opacity $trans-600;
+    pointer-events: none;
+
+    @include vp-768 {
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-content: center;
+      height: auto;
+      opacity: 1;
+      pointer-events: visible;
+    }
   }
 
   &__link {
+    display: block;
     color: $color-default-white;
+    line-height: 18px;
+    transition: transform $trans-default, opacity $trans-default;
 
     &.is-active {
       opacity: 0.6;
     }
+
+    @include hover-focus {
+      opacity: 0.8;
+      transform: scale(1.1);
+    }
+  }
+
+  &__status {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 7px;
+
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    @include vp-768 {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      padding: 6px 13px;
+      gap: 10px;
+
+      background: $color-honey-flower;
+      border-radius: 10px;
+    }
+  }
+
+  &__status-text {
+    line-height: 18px;
+    color: $color-sunglow;
+    display: none;
+
+    @include vp-768 {
+      display: block;
+    }
   }
 
   &__toggle {
-    display: none;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    border: none;
+    background-color: transparent;
+    padding: 7px;
+    cursor: pointer;
+    transition: opacity $trans-default;
+    position: relative;
+
+    @include vp-768 {
+      display: none;
+    }
+
+    @include hover-focus {
+      opacity: 0.8;
+    }
+
+    span {
+      display: block;
+      width: 23px;
+      height: 2px;
+      background: $color-default-white;
+      transition: transform $trans-600;
+    }
   }
 }

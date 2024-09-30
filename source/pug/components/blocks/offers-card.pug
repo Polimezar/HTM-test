@@ -1,0 +1,18 @@
+mixin offers-card(options = {})
+  - const label = options.label || "";
+  - const credit = options.credit || "";
+  - const price = options.price || "";
+
+  .offers-card&attributes(attributes)
+    .offers-card__label
+      p.offers-card__label-text!= label
+    .offers-card__price
+      .offers-card__price-wrap
+        p.offers-card__value!= credit
+        span.offers-card__credit-icon CR
+        span.offers-card__value.offers-card__value--slash /
+        p.offers-card__value.offers-card__value--price!= price
+
+      +btn({
+        text: "Buy now",
+      }).btn--white.offers-card__btn

@@ -1,0 +1,40 @@
+mixin offers-block()
+  .offers-block.swiper(data-slide-offers)
+    ul.offers-block__list.swiper-wrapper
+      li.offers-block__item.swiper-slide
+        +offers-card({
+          label: "One time offer!",
+          credit: "50",
+          price: "$5",
+        })
+      li.offers-block__item.swiper-slide
+        +offers-card({
+          label: "One time offer!",
+          credit: "150",
+          price: "$10",
+        })
+      li.offers-block__item.swiper-slide
+        +offers-card({
+          label: "One time offer!",
+          credit: "300",
+          price: "$20",
+        })
+      li.offers-block__item.swiper-slide
+        +offers-card({
+          label: "One time offer!",
+          credit: "500",
+          price: "$30",
+        })
+      li.offers-block__item.swiper-slide
+        +offers-card({
+          label: "One time offer!",
+          credit: "1000",
+          price: "$60",
+        })
+      li.offers-block__item.swiper-slide
+        +offers-card({
+          label: "One time offer!",
+          credit: "1000",
+          price: "$60",
+        }).offers-card--red
+    .swiper-pagination

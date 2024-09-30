@@ -1,0 +1,14 @@
+mixin custom-checkbox(options = {})
+  - const inputLabel = options.inputLabel ? options.inputLabel : false
+  - const inputId = options.inputId ? options.inputId : false
+  - const inputChecked = options.inputChecked || false
+  - const inputName = options.inputName ? options.inputName : false
+  - const inputValue = options.inputValue ? options.inputValue : false
+
+  .custom-checkbox&attributes(attributes)
+    label
+      input(type="checkbox", value=inputValue, id=inputId, name=inputName, checked=inputChecked)
+      span.custom-checkbox__icon
+        +icon("icon-check", 12, 8)
+      if inputLabel
+        span.custom-checkbox__label!= inputLabel
